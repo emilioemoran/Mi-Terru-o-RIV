@@ -1,6 +1,6 @@
-package com.example.miterruoriv
+package miterrunhoriv.model
 
-class Usuario(id:Long, nombre:String, dni:String, telefono:String, mail:String, direccion:String) {
+open class  Usuario(id:Long, nombre:String, dni:String, telefono:String, mail:String, direccion:String) {
     var id:Long=0
     var nombre: String=""
     var dni: String=""

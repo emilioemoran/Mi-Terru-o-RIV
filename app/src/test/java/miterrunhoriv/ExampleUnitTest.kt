@@ -1,4 +1,4 @@
-package com.example.miterruoriv
+package miterrunhoriv
 
 import org.junit.Test
 

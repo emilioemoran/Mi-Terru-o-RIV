@@ -1,4 +1,4 @@
-package com.example.miterruoriv
+package miterrunhoriv.model
 
 class Vino(id:Long, nombre:String, resena:String, tipoDeUva:String, tipo:String,
            anyo:String, origen: String, stock:Int, precio:Double) {

@@ -1,7 +1,8 @@
-package com.example.miterruoriv
+package miterrunhoriv
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.miterruoriv.R
 
 class MainActivity : AppCompatActivity() {
 
