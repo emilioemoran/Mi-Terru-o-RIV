@@ -1,15 +1,15 @@
 package miterrunhoriv.model
 
-class Vino(id:Long, nombre:String, resena:String, tipoDeUva:String, tipo:String,
+class Vino(id:Long, nombre:String, resenha:String, tipoDeUva:String, tipo:String,
            anyo:String, origen: String, stock:Int, precio:Double) {
-    var id: Long= 0
-    var nombre: String=""
-    var resenya: String=""
-    var tipoDeUva: String=""
-    var tipo: String=""
-    var anyo: String=""
-    var origen: String=""
-    var stock: Int=0
-    var precio: Double =0.0
+    var id: Long= id
+    var nombre: String= nombre
+    var resenha: String= resenha
+    var tipoDeUva: String= tipoDeUva
+    var tipo: String= tipo
+    var anyo: String= anyo
+    var origen: String= origen
+    var stock: Int= stock
+    var precio: Double =precio
 
 }

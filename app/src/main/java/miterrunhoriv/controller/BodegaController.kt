@@ -1,3 +1,5 @@
 package miterrunhoriv.controller
 
-class BodegaController
+class BodegaController(){
+
+}
