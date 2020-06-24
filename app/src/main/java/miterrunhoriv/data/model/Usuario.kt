@@ -1,4 +1,4 @@
-package miterrunhoriv.model
+package miterrunhoriv.data.model
 
 open class  Usuario(id:Long, nombre:String, dni:String, telefono:String, mail:String, direccion:String) {
     var id:Long=id

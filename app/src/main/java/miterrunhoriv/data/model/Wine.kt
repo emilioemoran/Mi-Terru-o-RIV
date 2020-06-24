@@ -1,4 +1,4 @@
-package miterrunhoriv.model
+package miterrunhoriv.data.model
 
 class Wine(id:Long, name:String, review:String, grape_type:String, brand:String,
            year:String, origin: String, stock:Int, price:Double, image:String) {

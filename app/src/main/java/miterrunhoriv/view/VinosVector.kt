@@ -1,6 +1,6 @@
 package miterrunhoriv.view
 
-import miterrunhoriv.model.Wine
+import miterrunhoriv.data.model.Wine
 import java.util.*
 
 class VinosVector: Vinos {
@@ -24,34 +24,44 @@ class VinosVector: Vinos {
         val vinos: ArrayList<Wine> = ArrayList<Wine>()
         vinos.add(
             Wine(
-                    1,
-            "CAVERNET SAUVIGNION", "", "",
-            "962849300", "",
-            "Valle de Uco", 3,5.5, "mtur"))
-        vinos.add(
-                    Wine(
-                        1,
-                        "MALBEC", "", "",
-                        "962849300", "",
-                        "Valle de Uco", 3,5.8,"mtesb"))
-        vinos.add(
-            Wine(
                 1,
-                "SYRA", "", "",
+                "CAVERNET SAUVIGNION", "", "",
                 "962849300", "",
-                "Valle de Uco", 3,5.8,"mtesb"))
-        vinos.add(
-            Wine(
-                1,
-                "PINOT NOIRE", "", "",
-                "962849300", "",
-                "Lujan de cuyo", 3,5.8,"mtesb"))
+                "Valle de Uco", 3, 5.5, "mtur"
+            )
+        )
         vinos.add(
             Wine(
                 1,
                 "MALBEC", "", "",
                 "962849300", "",
-                "Chile- Santiago", 3,5.8,"mtecs"))
+                "Valle de Uco", 3, 5.8, "mtesb"
+            )
+        )
+        vinos.add(
+            Wine(
+                1,
+                "SYRA", "", "",
+                "962849300", "",
+                "Valle de Uco", 3, 5.8, "mtesb"
+            )
+        )
+        vinos.add(
+            Wine(
+                1,
+                "PINOT NOIRE", "", "",
+                "962849300", "",
+                "Lujan de cuyo", 3, 5.8, "mtesb"
+            )
+        )
+        vinos.add(
+            Wine(
+                1,
+                "MALBEC", "", "",
+                "962849300", "",
+                "Chile- Santiago", 3, 5.8, "mtecs"
+            )
+        )
         return vinos
     }
 }

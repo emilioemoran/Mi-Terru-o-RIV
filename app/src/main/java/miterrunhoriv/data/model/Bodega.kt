@@ -1,4 +1,4 @@
-package miterrunhoriv.model
+package miterrunhoriv.data.model
 
 class Bodega(id:Long , nombre:String, vino: Array<Wine>) {
     var id: Long = id

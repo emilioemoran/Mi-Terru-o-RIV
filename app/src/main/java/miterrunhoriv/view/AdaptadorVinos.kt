@@ -11,12 +11,12 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import miterrunhoriv.R
-import miterrunhoriv.model.Wine
+import miterrunhoriv.data.model.Wine
 
 
-class AdaptadorVinos  (context: Context, vinos: Vinos) : RecyclerView.Adapter<AdaptadorVinos.ViewHolder>() {
+class AdaptadorVinos  (context: Context, wines: List<Wine>) : RecyclerView.Adapter<AdaptadorVinos.ViewHolder>() {
 
-    var vinos: Vinos= vinos
+    var wines = wines
     var context: Context = context
    var inflador:LayoutInflater = (context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater)
     lateinit var onClickListener: View.OnClickListener
@@ -47,7 +47,7 @@ class AdaptadorVinos  (context: Context, vinos: Vinos) : RecyclerView.Adapter<Ad
 
     // Usando como base el ViewHolder y lo personalizamos
     override fun onBindViewHolder( holder: miterrunhoriv.view.AdaptadorVinos.ViewHolder, posicion: Int) {
-        val vino: Wine = vinos.elemento(posicion)
+        val vino: Wine = wines[posicion]
         personalizaVista(holder, vino)
 
         var margin:Int= dptopx(5)
@@ -73,7 +73,7 @@ class AdaptadorVinos  (context: Context, vinos: Vinos) : RecyclerView.Adapter<Ad
 
     // Indicamos el número de elementos de la lista
     override fun getItemCount(): Int {
-        return vinos.tamanyo()
+        return wines.count()
     }
 
     fun setOnItemClickListener(onClickListener: View.OnClickListener?) {
