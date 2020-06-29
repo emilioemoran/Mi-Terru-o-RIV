@@ -14,7 +14,7 @@ import miterrunhoriv.R
 import miterrunhoriv.data.model.Wine
 
 
-class AdaptadorVinos  (context: Context, wines: List<Wine>) : RecyclerView.Adapter<AdaptadorVinos.ViewHolder>() {
+class AdaptadorVinos  (context: Context, wines: ArrayList<Wine>) : RecyclerView.Adapter<AdaptadorVinos.ViewHolder>() {
 
     var wines = wines
     var context: Context = context

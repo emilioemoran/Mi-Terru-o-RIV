@@ -9,7 +9,8 @@ import miterrunhoriv.R
 
 class MainActivity : AppCompatActivity() {
 
-lateinit var bMiTerrunho:Button
+    lateinit var bMiTerrunho:Button
+    lateinit var bVistaflores:Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +20,14 @@ lateinit var bMiTerrunho:Button
             val intent = Intent(this, BodegaActivity::class.java)
             intent.putExtra("Bodega","MiTerrunho" )
             startActivity(intent)
-            }
+        }
+        bVistaflores= vistaFlores
+        bVistaflores.setOnClickListener{
+            val intent = Intent(this, BodegaActivity::class.java)
+            intent.putExtra("Bodega","VistaFlores" )
+            startActivity(intent)
+        }
+
 
     }
 

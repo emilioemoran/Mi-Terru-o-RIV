@@ -4,7 +4,9 @@ import android.util.Log
 import android.widget.Toast
 import miterrunhoriv.data.model.Wine
 import miterrunhoriv.data.remotedatasource.MyApiAdapter
+import miterrunhoriv.data.remotedatasource.OnWinesResponse
 import miterrunhoriv.data.remotedatasource.WinesResponse
+import miterrunhoriv.domain.WinesUseCase
 import miterrunhoriv.view.ui.BodegaActivity
 import retrofit2.Call
 import retrofit2.Callback
@@ -12,45 +14,12 @@ import retrofit2.Response
 
 class WineDataSet {
 
-    fun createWinesList(): List<Wine> {
-        return getData()
-    }
-//        return listOf(
-//            Wine(
-//                1,
-//                "BONARDA", "", "",
-//                "962849300", "",
-//                "Valle de Uco", 3, 5.5, "mtur"
-//            ), Wine(
-//                1,
-//                "MALBEC", "", "",
-//                "962849300", "",
-//                "Valle de Uco", 3, 5.8, "mtesb"
-//            ), Wine(
-//                1,
-//                "SYRA", "", "",
-//                "962849300", "",
-//                "Valle de Uco", 3, 5.8, "mtesb"
-//            ), Wine(
-//                1,
-//                "PINOT NOIRE", "", "",
-//                "962849300", "",
-//                "Lujan de cuyo", 3, 5.8, "mtesb"
-//            ), Wine(
-//                1,
-//                "MALBEC", "", "",
-//                "962849300", "",
-//                "Chile- Santiago", 3, 5.8, "mtecs"
-//            )
-//        )
-//    }
-
-
-
+    var wineList: ArrayList<Wine> = arrayListOf()
+    fun createWinesList(callback: OnWinesResponse): ArrayList<Wine> {
 
     //obtiene datos de la api
-fun getData():List<Wine> {
-        var wineList: List<Wine> = listOf()
+
+        var wineList: ArrayList<Wine> = arrayListOf()
     val call: retrofit2.Call<WinesResponse> = MyApiAdapter.apiService!!.getWines()
     call.enqueue(object: Callback<WinesResponse>{
         override fun onFailure(call: Call<WinesResponse>, t: Throwable) {
@@ -67,6 +36,7 @@ fun getData():List<Wine> {
                 if (wineResponse != null) {
                     wineList = wineResponse.data
                     Log.d("TAG", "Va bien")
+                    callback.getWines(wineList)
 
                 }
             }else{
@@ -101,3 +71,36 @@ fun getData():List<Wine> {
 //        }
 //    }
 //    }
+//////////////////////////////////
+//        return listOf(
+//            Wine(
+//                1,
+//                "BONARDA", "", "",
+//                "962849300", "",
+//                "Valle de Uco", 3, 5.5, "mtur"
+//            ), Wine(
+//                1,
+//                "MALBEC", "", "",
+//                "962849300", "",
+//                "Valle de Uco", 3, 5.8, "mtesb"
+//            ), Wine(
+//                1,
+//                "SYRA", "", "",
+//                "962849300", "",
+//                "Valle de Uco", 3, 5.8, "mtesb"
+//            ), Wine(
+//                1,
+//                "PINOT NOIRE", "", "",
+//                "962849300", "",
+//                "Lujan de cuyo", 3, 5.8, "mtesb"
+//            ), Wine(
+//                1,
+//                "MALBEC", "", "",
+//                "962849300", "",
+//                "Chile- Santiago", 3, 5.8, "mtecs"
+//            )
+//        )
+//    }
+
+
+

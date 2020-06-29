@@ -4,29 +4,43 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import miterrunhoriv.data.model.Wine
+import miterrunhoriv.data.remotedatasource.OnWinesResponse
+import miterrunhoriv.data.repository.WineDataSet
 import miterrunhoriv.domain.WinesUseCase
 
 class BodegaViewModel : ViewModel() {
-//     var wines: ArrayList<Wine>?=null
 
-    val wineUseCase = WinesUseCase()
-    private val listData = MutableLiveData<List<Wine>>()
 
-    init {
-        getWineList()
-    }
+    val wineDataSet = WineDataSet()
+    private val listData = MutableLiveData<ArrayList<Wine>>()
 
-    fun setListData(listWines: List<Wine>){
+//   init {
+//      getWineList()
+//    }
+
+    fun setListData(listWines: ArrayList<Wine>){
         listData.value = listWines
     }
 
     fun getWineList(){
-        setListData(wineUseCase.getWineList())
+        var wines: ArrayList<Wine> = arrayListOf()
+        wineDataSet.createWinesList(object : OnWinesResponse {
+            override fun getWines(dwines: ArrayList<Wine>): ArrayList<Wine> {
+                wines=dwines
+                setListData(wines)
+                return dwines
+            }
+        })
     }
 
-    fun getWineListLiveData(): LiveData<List<Wine>>{
+    fun getWineListLiveData(): LiveData<ArrayList<Wine>>{
         return listData
     }
+
+    fun postWineListLiveData(listWines: ArrayList<Wine>){
+        return listData.postValue(listWines)
+    }
+
 
 
 //    //obtiene datos de la api
