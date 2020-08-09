@@ -26,9 +26,16 @@ class BodegaViewModel : ViewModel() {
         var wines: ArrayList<Wine> = arrayListOf()
         wineDataSet.createWinesList(object : OnWinesResponse {
             override fun getWines(dwines: ArrayList<Wine>): ArrayList<Wine> {
-                wines=dwines
+                // Filtramos los elementos que no tienen nombre
+                var j : Int = 0
+                for (i in dwines){
+                    if (i.name != ""){
+                        wines.add(j , i)
+                        j ++
+                    }
+                }
                 setListData(wines)
-                return dwines
+                return wines
             }
         })
     }

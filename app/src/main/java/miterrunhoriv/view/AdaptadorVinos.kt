@@ -48,13 +48,15 @@ class AdaptadorVinos  (context: Context, wines: ArrayList<Wine>) : RecyclerView.
     // Usando como base el ViewHolder y lo personalizamos
     override fun onBindViewHolder( holder: miterrunhoriv.view.AdaptadorVinos.ViewHolder, posicion: Int) {
         val vino: Wine = wines[posicion]
+
         personalizaVista(holder, vino)
 
-        var margin:Int= dptopx(5)
-
-        var layoutParams :FrameLayout.LayoutParams = holder.cardVino.layoutParams as FrameLayout.LayoutParams
-        layoutParams.setMargins(margin,margin,margin,margin)
+        var margin: Int = dptopx(5)
+        var layoutParams: FrameLayout.LayoutParams =
+            holder.cardVino.layoutParams as FrameLayout.LayoutParams
+        layoutParams.setMargins(margin, margin, margin, margin)
         holder.cardVino.layoutParams = layoutParams;
+
     }
 
     // Personalizamos un ViewHolder a partir de un lugar
